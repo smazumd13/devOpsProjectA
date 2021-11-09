@@ -1,0 +1,63 @@
+- name: Create Azure VM
+  hosts: localhost
+  connection: local
+  tasks:
+  - name: Create resource group
+    azure_rm_resourcegroup:
+      name: dockerEngineRG
+      location: eastus
+  - name: Create virtual network
+    azure_rm_virtualnetwork:
+      resource_group: dockerEngineRG
+      name: myVnet
+      address_prefixes: "10.0.0.0/16"
+  - name: Add subnet
+    azure_rm_subnet:
+      resource_group: dockerEngineRG
+      name: mySubnet
+      address_prefix: "10.0.1.0/24"
+      virtual_network: myVnet
+  - name: Create public IP address
+    azure_rm_publicipaddress:
+      resource_group: dockerEngineRG
+      allocation_method: Static
+      name: myPublicIP
+    register: output_ip_address
+  - name: Public IP of VM
+    debug:
+      msg: "The public IP is {{ output_ip_address.state.ip_address }}."
+  - name: Create Network Security Group that allows SSH
+    azure_rm_securitygroup:
+      resource_group: dockerEngineRG
+      name: myNetworkSecurityGroup
+      rules:
+        - name: AllowAll
+          protocol: Tcp
+          destination_port_range: '*'
+          access: Allow
+          priority: 100
+          direction: Inbound
+  - name: Create virtual network interface card
+    azure_rm_networkinterface:
+      resource_group: dockerEngineRG
+      name: myNIC
+      virtual_network: myVnet
+      subnet: mySubnet
+      public_ip_name: myPublicIP
+      security_group: myNetworkSecurityGroup
+  - name: Create VM
+    azure_rm_virtualmachine:
+      resource_group: dockerEngineRG
+      name: dockerEngine
+      vm_size: Standard_DS1_v2
+      admin_username: vmadmin
+      ssh_password_enabled: false
+      ssh_public_keys:
+        - path: /home/vmadmin/.ssh/authorized_keys
+          key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWEJLHRxmg4b4h02nCH/lf1kPrt7aztfNxXHCDPmf0jTOfyVY97IfvGzvdZjYq6QlyI7Sk2fbIqnEuxGNChslAFGj2vOVS8hYt3oqTxpllOJMeoXyZCtW9nfDFs+zrjCZ5eMvcQAPz6/0adajE2Ls7BqdFRGvqAztJXxyojoEt1lCXZ2dqt1rIzPLE5jg0JHeY0IX0u1mdg45OavAGDVRLQAqBUaK5HeQBxToVVfsP1J1NNNiNhVuxWEehcaM1w2wzl0iih70aHDM0jb/X4vD/qWn0p1nu/OFG7aJAdSQvTilc54/J8H0PCfFW/CJ3nWd7Zyja//PPV7iL8tqW9C0FyecyD8+auEH3DoUO7zZWT3I9BzJ0B0mwGGdYavW1nQe0mxJWxnzvPD3aJQNOa7+4D06DDFSHUMVDsvXZ3fKHlfckhfvT25Lyq7pV0z87SYJvLZ/C/mawppcVta6WmoirvfPed2+PB2xsWuvPoJOXNzI/Ge8Avv8GZx9nEG/sq/1v3/u77Q/t/UadhoW46Y8I+FRXfsNzF0fVxoHW7EvAbCO0krV7m+l84VN+zesv0sRSInW6Qi3PGrxP13NBdgSjvMEKJjQHH91UM6nDr1HFClRuPB25Xvx2b0BaiW+4Uk1vrIrvGlhX5BR9rd2wmblAVxi2Hp9sk4V8NPOmjqRd+Q== vmadmin@vmNode1"
+      network_interfaces: myNIC
+      image:
+        offer: UbuntuServer
+        publisher: Canonical
+        sku: '18.04-LTS'
+        version: latest
