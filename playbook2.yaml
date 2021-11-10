@@ -1,0 +1,8 @@
+- name: Configure the Docker Engine
+  hosts: all
+  tasks:
+  - name: Install Docker
+    apt:
+      name: docker*
+      state: latest
+      update_cache: yes
