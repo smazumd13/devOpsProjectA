@@ -53,9 +53,9 @@
       admin_username: vmadmin
       ssh_password_enabled: true
       admin_password: Password123!
-      # ssh_public_keys:
-      #   - path: /home/vmadmin/.ssh/authorized_keys
-      #     key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCdbdybDeZseC7M+qT6Mz3vM8OFPrzXyOPf7UnXc3XuK0JkaKHFWKCpjTSPmDRHY8ZHmlTv3IJBG8aSmpkDk4uHNgEFV2YAHrD+6NT+URtZel74RhcKw2KADvIOgQvplcSb0WoGE8lZdinLPdHPZjmQZxMSiRyfY+VA3Pi47tSaJ/tEaxVoJdgo63ueSIg7CUa3zg4+DRrA7N+3b55J+xqJoCbG+c3WqiETxIurhY2uc4I148MTvEMEeU2CY2DCbgad46hrdX5XeM6YX5rREB4YmxXCBYP3eT9sASuSmVK6hM8Nmq1/5Cr8ONLYPhyimGZL3BxOg1uN7MjXW85aews0UL6cT0qbJgaZTkKYxpJdS8TIqWO6j4hFbTMUX9ROjNyEy8mP2VM6/23eC5vGyGql4XlMZQbZx6MZOrJ+BvSUPzmN6ZlIb0JA2tGt1O+bmGhst32iNHj5lGc4hf10INVEHU7ThlXxSkiFwQt+iTM5WaKEhdGaIotDVV+w64Xs+ErLMJSymtf6TsRC+HqsMqZKEUe3x/TeMQNhvKZKSr+CH//Y7/G2hUulPk9t4COO9BpEK8pjIdvjGo7i7tduRXSqMgc9UFeYIj4XQbC6DODI+SokhDsL5n74nwAEaoWWB+RPuB0DXdSfG5WFAETRUZB/nTISwlXflc3CApJDru2ow== vmadmin@vmNode1"
+      ssh_public_keys:
+        - path: /home/vmadmin/.ssh/authorized_keys
+          key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQC6/SYo+Trkod/I5xBR2kVtxX25Cjcw7srpmC49oFYSuqs+0VPgeOe3bvPEiGrdl4binCfTFUx/RojuUg5SNwHJaPtibMwFHFbSu1Tj23MC9cWc2i1DyKRH0GMNH/oCNk0G4loCt+b8GIk0W+/7lFmeJucKg3L7kFx+G6HAKJy2QJrcK6GgApyobo/ie8LXA10mlipo0hinIuGu/9inSz6OMH6dT+AYsHlS/+8b7g3GkMgAWwXzGcxlypQ0uoMCyATRi7cQqXOkPBZcmgGusPxpNi8s/oaYjULY1kDSoVm3nCq2X3I7LAPnbtVYzCMSRgRhcXXvJLaTPPIdcedJrfxZXPCDuCaLLBCa+Vt44BaAMfQ7tyS2Obxup5o1OnCi2JrSPIP5f0jQNOCNMiTKWob8Wd++Zjf1r6oBSSqJvUbSA3hprfxR5i9Z1hBnCvBpRGUst+b6IJpsCEOzQmM2mWCBZEIsfHgdWEwKdwThLVT0+VT+xCLwczUTFcOojTEIsXWB5M/76aG4HI1ER4wFBPs0DKSFFY7xtXP1ecuNA7fvNWEasF/riGwDrmsHvnDSqb7Vz+KTG+SCMEc9IBO1acAAt9tDsgpA5t8hPbZaocTk2WJI1wDl8niI5HWSgnN2/vSlkKFBCXjNTjRJHwaKnN4WlAq+EJRD1Zs7JNnWxy0CVQ== vmadmin@vmNode1"
       network_interfaces: myNIC
       image:
         offer: UbuntuServer
