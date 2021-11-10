@@ -51,10 +51,11 @@
       name: dockerEngine
       vm_size: Standard_DS1_v2
       admin_username: vmadmin
-      ssh_password_enabled: false
-      ssh_public_keys:
-        - path: /home/vmadmin/.ssh/authorized_keys
-          key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDWEJLHRxmg4b4h02nCH/lf1kPrt7aztfNxXHCDPmf0jTOfyVY97IfvGzvdZjYq6QlyI7Sk2fbIqnEuxGNChslAFGj2vOVS8hYt3oqTxpllOJMeoXyZCtW9nfDFs+zrjCZ5eMvcQAPz6/0adajE2Ls7BqdFRGvqAztJXxyojoEt1lCXZ2dqt1rIzPLE5jg0JHeY0IX0u1mdg45OavAGDVRLQAqBUaK5HeQBxToVVfsP1J1NNNiNhVuxWEehcaM1w2wzl0iih70aHDM0jb/X4vD/qWn0p1nu/OFG7aJAdSQvTilc54/J8H0PCfFW/CJ3nWd7Zyja//PPV7iL8tqW9C0FyecyD8+auEH3DoUO7zZWT3I9BzJ0B0mwGGdYavW1nQe0mxJWxnzvPD3aJQNOa7+4D06DDFSHUMVDsvXZ3fKHlfckhfvT25Lyq7pV0z87SYJvLZ/C/mawppcVta6WmoirvfPed2+PB2xsWuvPoJOXNzI/Ge8Avv8GZx9nEG/sq/1v3/u77Q/t/UadhoW46Y8I+FRXfsNzF0fVxoHW7EvAbCO0krV7m+l84VN+zesv0sRSInW6Qi3PGrxP13NBdgSjvMEKJjQHH91UM6nDr1HFClRuPB25Xvx2b0BaiW+4Uk1vrIrvGlhX5BR9rd2wmblAVxi2Hp9sk4V8NPOmjqRd+Q== vmadmin@vmNode1"
+      ssh_password_enabled: true
+      admin_password: Password123!
+      # ssh_public_keys:
+      #   - path: /home/vmadmin/.ssh/authorized_keys
+      #     key_data: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDCdbdybDeZseC7M+qT6Mz3vM8OFPrzXyOPf7UnXc3XuK0JkaKHFWKCpjTSPmDRHY8ZHmlTv3IJBG8aSmpkDk4uHNgEFV2YAHrD+6NT+URtZel74RhcKw2KADvIOgQvplcSb0WoGE8lZdinLPdHPZjmQZxMSiRyfY+VA3Pi47tSaJ/tEaxVoJdgo63ueSIg7CUa3zg4+DRrA7N+3b55J+xqJoCbG+c3WqiETxIurhY2uc4I148MTvEMEeU2CY2DCbgad46hrdX5XeM6YX5rREB4YmxXCBYP3eT9sASuSmVK6hM8Nmq1/5Cr8ONLYPhyimGZL3BxOg1uN7MjXW85aews0UL6cT0qbJgaZTkKYxpJdS8TIqWO6j4hFbTMUX9ROjNyEy8mP2VM6/23eC5vGyGql4XlMZQbZx6MZOrJ+BvSUPzmN6ZlIb0JA2tGt1O+bmGhst32iNHj5lGc4hf10INVEHU7ThlXxSkiFwQt+iTM5WaKEhdGaIotDVV+w64Xs+ErLMJSymtf6TsRC+HqsMqZKEUe3x/TeMQNhvKZKSr+CH//Y7/G2hUulPk9t4COO9BpEK8pjIdvjGo7i7tduRXSqMgc9UFeYIj4XQbC6DODI+SokhDsL5n74nwAEaoWWB+RPuB0DXdSfG5WFAETRUZB/nTISwlXflc3CApJDru2ow== vmadmin@vmNode1"
       network_interfaces: myNIC
       image:
         offer: UbuntuServer
