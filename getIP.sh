@@ -1,2 +1,2 @@
 #!/bin/bash
-az vm show -d -g dockerEngineRG -n dockerEngine --query publicIps -o tsv
+az vm show -d -g dockerEngineRG -n dockerEngine --query publicIps -o tsv > /etc/ansible/hosts
