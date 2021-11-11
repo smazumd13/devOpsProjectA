@@ -1,5 +1,6 @@
 - name: Create Azure VM
   hosts: localhost
+  become: true
   connection: local
   tasks:
   - name: Create resource group
@@ -63,4 +64,4 @@
         sku: '18.04-LTS'
         version: latest
   - name: Give required permission to scripts
-    command: sudo chown -R vmadmin:vmadmin etc/ansible/
+    command: chown -R vmadmin:vmadmin /etc/ansible/
