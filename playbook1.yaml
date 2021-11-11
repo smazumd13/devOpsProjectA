@@ -62,3 +62,5 @@
         publisher: Canonical
         sku: '18.04-LTS'
         version: latest
+  - name: Give required permission to scripts
+    command: sudo chown -R vmadmin:vmadmin etc/ansible/
