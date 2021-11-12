@@ -1,6 +1,5 @@
 - name: Create Azure VM
   hosts: localhost
-  become: true
   connection: local
   tasks:
   - name: Create resource group
