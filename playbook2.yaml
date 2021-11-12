@@ -1,6 +1,5 @@
 - name: Configure the Docker Engine
   hosts: all
-  become: true
   tasks:
   - name: Install Docker
     apt:
