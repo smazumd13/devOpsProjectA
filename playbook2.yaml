@@ -7,7 +7,15 @@
       name: docker*
       state: latest
       update_cache: yes
+
+  - name: Transfer executable script
+    copy: src=/home/vmadmin/workspace/deploymentLane/deployment.sh dest=/home/vmadmin/ mode=0777
+
+  - name: Execute the script
+    command: sh deployment.sh
+
   - name: Pull image for docker.hub
     command: docker pull smazumd13/projecta:latest
+
   - name: Create the container
     command: docker run -d -p 80:8080 --name con1 smazumd13/projecta:latest
