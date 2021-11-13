@@ -1,6 +1,6 @@
 <html>
 <body>
-<h2>Hello World! This is the Maven Project</h2>
-<h6>This is change1</h6>
+<h1>Hello World! This is the Maven Project</h1>
+<h2>This is change1</h2>
 </body>
 </html>
