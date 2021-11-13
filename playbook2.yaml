@@ -7,3 +7,9 @@
       name: docker*
       state: latest
       update_cache: yes
+  - name: Pull image for docker.hub
+    command: docker pull smazumd13/projecta:latest
+  - name: Remove the old container
+    command: docker stop con1 && docker rm con1
+  - name: Create the container
+    command: docker run -d -p 80:80 --name con1 smazumd13/projecta:latest
