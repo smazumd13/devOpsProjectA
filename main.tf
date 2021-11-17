@@ -13,10 +13,10 @@ provider "azurerm" {
   features {}
 
 # Configure Service Principle
-  subscription_id   = "c5f029c7-a268-4433-95d4-12eb70cd4cd0"
-  tenant_id         = "ab70bfe3-44cc-4887-813f-f27addb46899"
-  client_id         = "6ce3c813-57dc-4b64-9e26-6f6cb100327e"
-  client_secret     = "RQO7Q~rf7~6RbGfkHAM6YsoR3AjnSOY7lq-Wt"
+  subscription_id   = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  tenant_id         = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  client_id         = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+  client_secret     = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 }
 
 # Create a resource group
@@ -129,7 +129,7 @@ resource "azurerm_linux_virtual_machine" "linvm" {
     connection {
         type     = "ssh"
         user     = "vmadmin"
-        password = "Password123!"
+        password = var.userAdminKey
         host     = self.public_ip_address
         private_key = "${file("~/.ssh/id_rsa")}"
         agent = true
@@ -143,7 +143,7 @@ resource "azurerm_linux_virtual_machine" "linvm" {
     connection {
         type     = "ssh"
         user     = "vmadmin"
-        password = "Password123!"
+        password = var.userAdminKey
         host     = self.public_ip_address
         private_key = "${file("~/.ssh/id_rsa")}"
         agent = true
@@ -159,7 +159,7 @@ resource "azurerm_linux_virtual_machine" "linvm" {
     connection {
         type     = "ssh"
         user     = "vmadmin"
-        password = "Password123!"
+        password = var.userAdminKey
         host     = self.public_ip_address
         private_key = "${file("~/.ssh/id_rsa")}"
         agent = true
